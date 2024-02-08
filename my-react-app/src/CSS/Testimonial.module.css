@@ -1,0 +1,18 @@
+.button{
+   background-color: rgb(9, 105, 108);
+   color: black;
+   border: none;
+   height: 30px;
+}
+.rating{
+    margin-right: 10px;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.Text{
+    text-align: center;
+    font-weight: bolder;
+    color: black;
+    font-size: 50px;
+}
