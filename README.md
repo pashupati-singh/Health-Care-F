@@ -3,9 +3,9 @@
 Welcome to the Joint and Muscular Patient Appointment Booking System repository! This project aims to provide a platform for patients suffering from joint and muscular issues to easily book appointments with doctors.
 
 Deploy Links
-https://movie-6cgo.onrender.com/ : server-side.
+https://health-f1fh.onrender.com : server-side.
 
-https://rainbow-faloodeh-3eb3e2.netlify.app/ : client-side.
+https://prismatic-douhua-1c4ff9.netlify.app/?city=Lucknow : client-side.
 
 #Features
 Appointment Booking: Users can book appointments with doctors through a simple 4-step form.
@@ -30,6 +30,6 @@ Read through the testimonials to learn about others' experiences with the servic
 
 #API Endpoints
 
-Doctors GET /doc: For getting Doctors
+Doctors GET /doc?city=Lucknow : For getting Doctors or (Bangalore)
 
 GET /testimonial: Get a list of Testimonials.
