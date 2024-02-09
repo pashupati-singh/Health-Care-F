@@ -58,11 +58,11 @@ export const Testimonial = () => {
     ],
   };
 
-  console.log(data);
+  // console.log(data);
   
 
   const FetchData = async() =>{
-     fetch(`http://localhost:8080/testimonial`)
+     fetch(`https://health-f1fh.onrender.com/testimonial`)
      .then((res)=>res.json())
      .then((data)=>setData(data))
      .catch((error)=>console.log(error)
@@ -77,7 +77,7 @@ export const Testimonial = () => {
   return (
     <div>
       <Text className={style.Text}>Patient Recovery Stories</Text>
-        <div>
+        <div style={{maxWidth:"95%",margin:"auto"}}>
       <Slider {...settings}>
         {data.map((item:Testimonial, index) => (
           <div key={index}>

@@ -3,25 +3,25 @@ import React, { useState } from 'react';
 import Checkbox from '@mui/material/Checkbox';
 import { Box, FormLabel } from '@chakra-ui/react';
 
-interface CheckboxData {
+interface Checkbox {
   label: string;
   name: string;
 }
 
-interface FormData {
+interface FormData1 {
     time: string;
   }
 
 interface BookProps {
-    handleBook: (formData: FormData) => void;
+    handleBook: (formData1: FormData1) => void;
   }
 
 
 export const Book: React.FC<BookProps> = ({ handleBook })=> {
-    const [formData, setFormData] = useState<FormData>({ time: ''});
-  const [selectedCheckbox, setSelectedCheckbox] = useState<string | null>(null);
+    const [formData1, setFormData1] = useState<FormData1>({ time: ''});
+  const [selectedCheck, setSelectedCheck] = useState<string | null>(null);
 
-  const checkboxes: CheckboxData[] = [
+  const checkbox: Checkbox[] = [
     { label: '9 a.m. - 10 a.m.', name:  '9 a.m. - 10 a.m.'},
     { label: '10:15 a.m. - 11:15 a.m.', name:  '10:15 a.m. - 11:15 a.m.'},
     { label: '11:30 a.m. - 12:30 p.m.', name:  '11:30 a.m. - 12:30 p.m.'},
@@ -31,27 +31,33 @@ export const Book: React.FC<BookProps> = ({ handleBook })=> {
   ];
 
   const handleCheckboxChange = (label: string, name: string) => {
-
-    if (selectedCheckbox === label) {
-      setSelectedCheckbox(null);
-      setFormData(prevState => ({ ...prevState, time: name }))
+    // console.log(name);
+    if (selectedCheck === label) {
+      setSelectedCheck(null);
+      console.log('unchecked' , name);
+      
     } else {
-      setSelectedCheckbox(label);
+      setSelectedCheck(label);
+      console.log('checked' , name);
+      const updatedFormData = { time: name };
+     setFormData1(updatedFormData);
+     console.log(updatedFormData);
+     
     }
-    handleBook(formData)
+    handleBook(formData1)
   };
 
 
 
   return (
     <div  className={style.container}>
-         <FormLabel style={{marginBottom : "20px",fontSize:"20px"}} className={style.FormLabel}>Tommorow slots</FormLabel>
-      {checkboxes.map(({ label, name }) => (
+         <FormLabel style={{marginBottom : "20px",fontSize:"20px"}} className={style.FormLabel}>Tomorrow slots</FormLabel>
+      {checkbox.map(({ label, name }) => (
          <Box key={label} style={{ display: "flex", justifyContent: "space-between" }}>
          <label style={{ textAlign: "left", marginRight: '10px' }}>{label}</label>
          <Checkbox
          required
-           checked={selectedCheckbox === label}
+           checked={selectedCheck === label}
            onChange={() => handleCheckboxChange(label, name)}
          />
        </Box>

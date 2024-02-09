@@ -14,10 +14,14 @@
   transform: translate(-50%, -50%);
   width: 400px;
   max-width: 90%;
-  background-color: white;
+  background-color: rgb(60 60 60);
+  color: whitesmoke;
   box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.5);
   padding: 16px;
   text-align: center;
+  border-radius: 5px;
+  /* background-color: rgb(0, 183, 255); */
+  height: 500px;
 }
 
 .form-title {
@@ -30,11 +34,12 @@
 
 .container {
   max-width: 400px;
-  height: 280px;
-  margin: 0 auto;
+  height: 350px;
+  margin: 20px 0 0 0;
   padding: 20px;
-  border: 1px solid #ccc;
+  border: 1px solid #f2efef;
   border-radius: 5px;
+  /* background-color: aliceblue; */
 }
 
 .label {
@@ -43,14 +48,14 @@
 }
 
 .text{
-  color: rgb(9, 105, 108);
+  color: rgb(176, 245, 248);
 }
 
 .field {
   width: 100%;
   padding: 7px;
   margin-bottom: 20px;
-  border: 1px solid #ccc;
+  border: 1px solid #fdfdfd;
   border-radius: 5px;
   box-sizing: border-box;
 }
@@ -58,7 +63,8 @@
 .button {
   width: 100%;
   padding: 10px;
-  background-color: #007bff;
+  margin-top: 20px;
+  background-color: #4293eb;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -70,8 +76,9 @@
 }
 
 .FormLabel{
-  color: #0056b3;
+  color: #f7f7f7;
   font-size: small;
+  margin-bottom: 10px;
 }
 
 @media screen and (max-width: 1200px) and (min-width: 800px) {
@@ -83,7 +90,7 @@
 
   .container {
     max-width: 300px;
-    height: 280px;
+    height: 350px;
   }
 }
 

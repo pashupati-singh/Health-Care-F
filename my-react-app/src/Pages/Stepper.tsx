@@ -15,6 +15,7 @@ interface Contact {
     name: string;
     mobile: string;
   }
+  
   interface Issue {
     age: string;
     profession:string
@@ -27,6 +28,9 @@ interface Contact {
   interface Book {
     time:string
    }
+
+   
+   
 
 const steps = ['Contact', 'Issue', 'Duration', 'Book Now'];
 
@@ -74,10 +78,17 @@ export const StepperFun = () => {
     setDuration(value)
     handleNext();
 }
-const handleBook = (value: Book) =>{
-    setBook(value)
-    handleNext();
-}
+// const handleBook = (value: Book) =>{
+//     setBook(value)
+//     console.log(value);
+    
+//     handleNext();
+// }
+
+const handleBook = (value: Book) => {
+  setBook(value); // Set the book value in state
+  handleNext(); // Move to the next step
+};
 
   const renderStepContent = (step: number) => {
     switch (step) {
@@ -93,7 +104,6 @@ const handleBook = (value: Book) =>{
         return null;
     }
   };
-
 
   return (
     <Box sx={{ width: '100%' }} borderRadius={'10px'} height={"400px"} className = {style.mainContainer}>
@@ -124,9 +134,11 @@ const handleBook = (value: Book) =>{
       {activeStep === steps.length ? (
         <React.Fragment>
 <Typography sx={{ mt: 2, mb: 1 }}>
-  Thank you for visiting Your slot is book 
-
+  Thank you {contact ?  `${contact.name}` : null} for visiting,  
 </Typography>
+<Typography>
+  Your slot has been booked.
+  </Typography>
 
           <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
             <Box sx={{ flex: '1 1 auto' }} />

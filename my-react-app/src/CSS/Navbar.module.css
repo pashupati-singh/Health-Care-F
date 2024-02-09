@@ -23,14 +23,3 @@
    height: 100%;
 }
 
-
-
-
-@media screen and (max-width : 1200px) and (min-width : 800px) {
- 
-.mainContainer{
-  background-color: red;
-
-}
-
-}

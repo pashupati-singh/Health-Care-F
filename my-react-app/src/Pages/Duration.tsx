@@ -37,8 +37,6 @@ export const Duration: React.FC<DurationProps> = ({ handleDuration })=> {
       console.log('Unchecked:', name);
     } else {
       setSelectedCheckbox(label);
-     
-      console.log('Checked:', name);
     }
     handleDuration(formData)
   };
